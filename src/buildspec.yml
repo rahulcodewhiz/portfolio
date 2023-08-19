@@ -1,0 +1,19 @@
+version: 0.1
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing source NPM packages...
+      - npm install -g @angular/cli
+      - npm install
+  build:
+    commands:
+      - echo Building the Angular app...
+      - ng build --configuration production
+
+artifacts:
+  files:
+    - dist/**/*
+  base-directory: 'dist/portfolio'
